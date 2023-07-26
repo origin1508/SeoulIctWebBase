@@ -77,6 +77,7 @@ function play() {
 
   function checkWin(x, y) {
     const visit = [];
+    visit.push([x, y]);
     // 방향별 돌 카운트
     const count = {
       horizontal: 1,
@@ -100,7 +101,6 @@ function play() {
     }
     // 방향별 돌을 체크하기 위한 함수
     function checkLine(x, y, direction) {
-      visit.push([x, y]);
       directions[direction].forEach(([i, j]) => {
         const nextX = x + i;
         const nextY = y + j;
