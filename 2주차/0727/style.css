@@ -1,0 +1,228 @@
+html,
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  clear: both;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: x-large;
+}
+
+.search {
+  padding-left: 30px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(211, 211, 211, 0.397);
+  outline-style: none;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: white;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.header_top {
+  display: flex;
+  align-items: center;
+  max-width: 1280px;
+  height: 96px;
+  margin: 0 auto;
+}
+
+.header_top .title {
+  margin-right: 160px;
+}
+
+.header_top .search {
+  height: 40px;
+  width: 50%;
+  margin-right: auto;
+}
+
+nav {
+  height: 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.nav_list li {
+  width: 120px;
+  padding: 4px 0px;
+  text-align: center;
+  line-height: 40px;
+  float: left;
+  cursor: pointer;
+}
+
+.nav_list .nav_item:hover {
+  border-bottom: 2px solid black;
+}
+
+.nav_list .nav_category {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nav_list .nav_category:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.slider_container {
+  position: relative;
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 70px;
+  border-radius: 8px;
+}
+
+.slider_wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider_wrapper .slide_image {
+  display: flex;
+  height: 480px;
+  border-radius: 8px;
+}
+
+.slide_image img {
+  flex-shrink: 0;
+}
+
+.slider_pagination {
+  width: 100%;
+  padding-top: 16px;
+  text-align: center;
+}
+
+.slider_container .slider_dot {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.slider_container .slider_dot:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.slider_container .slider_button {
+  width: 100%;
+}
+
+.slider_button button {
+  height: 48px;
+  width: 48px;
+  font-size: x-large;
+  font-weight: bold;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.slider_button button:hover {
+  color: white;
+  background-color: rgb(40, 40, 40);
+}
+
+.slider_button .left_arrow {
+  position: absolute;
+  top: 200px;
+  left: -24px;
+}
+
+.slider_button .right_arrow {
+  position: absolute;
+  top: 200px;
+  right: -24px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item_list_container {
+  margin-bottom: 64px;
+}
+
+.item_list {
+  display: flex;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 250px;
+  margin-right: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.item:hover {
+  position: relative;
+  top: -10px;
+  box-shadow: 3px 6px 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+.item img {
+  height: 250px;
+}
+
+.item_description {
+  padding: 8px;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* max-width: 1280px; */
+  height: 240px;
+  margin: 0 auto;
+  padding-top: 80px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+footer h4 {
+  height: 40px;
+}
+
+footer div {
+  height: 80px;
+  width: 20%;
+}
