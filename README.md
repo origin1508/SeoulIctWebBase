@@ -12,3 +12,12 @@
 
 - [0724 - null과 undefined의 차이점을 찾아보기](https://github.com/origin1508/nipa-ict-web/tree/main/2%EC%A3%BC%EC%B0%A8/0724)
 - [0725 - 자바스크립트로 오목게임 만들어보기](https://github.com/origin1508/nipa-ict-web/tree/main/2%EC%A3%BC%EC%B0%A8/0725)
+- [0727 - Web-API를 이용하여 본인의 웹사이트의 기능을 구현한 후 코드와 작동되는 화면을 영상 또는 스크린샷을 찍어서 첨부하기](https://github.com/origin1508/nipa-ict-web/tree/main/2%EC%A3%BC%EC%B0%A8/0727)
+
+## 3주차
+- [0731 - 문자끼리 비교하는 연산이 상대적으로 불리한지 이유에대해 정리, set()없이 중복제거하는 코드 작성](https://github.com/origin1508/nipa-ict-web/tree/main/3%EC%A3%BC%EC%B0%A8/0731)
+- [0801 - pandas로 my_data.csv 수정하고 저장하기](https://github.com/origin1508/nipa-ict-web/tree/main/3%EC%A3%BC%EC%B0%A8/0801)
+- [0803 - Flask&Pymysql을 이용하여 본인의 DB를 연동해 내가 만든 HTML에 데이터를 넘겨보기](https://github.com/origin1508/nipa-ict-web/tree/main/3%EC%A3%BC%EC%B0%A8/0803)
+
+## 4주차
+- [0807 - node.js 활용 디지털 시계 만들기](https://github.com/origin1508/nipa-ict-web/tree/main/4%EC%A3%BC%EC%B0%A8/0807)
