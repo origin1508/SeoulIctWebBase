@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Clock</title>
+    <style>
+      @font-face {
+        font-family: "TTTtangsbudaejjigaeB";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/TTTtangsbudaejjigaeB.woff2")
+          format("woff2");
+        font-weight: 500;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "S-CoreDream-3Light";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      * {
+        font-family: "S-CoreDream-3Light";
+        box-sizing: border-box;
+        font-size: 32px;
+      }
+
+      body {
+        margin: 0;
+        color: rgb(255, 255, 255);
+        background: linear-gradient(to bottom left, skyblue, hotpink);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .clock {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 700px;
+        height: 700px;
+        min-width: 360px;
+        margin: 0 auto;
+        padding: 50px 0;
+        text-align: center;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 50%;
+      }
+
+      .today {
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .time {
+        margin-top: 10px;
+        margin-bottom: 30px;
+        font-family: "TTTtangsbudaejjigaeB";
+      }
+      .hourMinute {
+        font-family: inherit;
+        font-size: 3rem;
+      }
+      .second {
+        display: inline-block;
+        width: 55px;
+        font-family: inherit;
+      }
+
+      .calendar {
+        margin: 0 auto;
+      }
+
+      .calendar-header th {
+        font-size: 0.75rem;
+      }
+
+      .calendar-body td {
+        font-size: 0.875rem;
+        width: 50px;
+      }
+
+      .calendar-body td.now {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock">
+      <div id="today" class="today"></div>
+      <div id="time" class="time">
+        <span id="hourMinute" class="hourMinute"></span>
+        <span id="second" class="second"></span>
+      </div>
+      <table id="calendar" class="calendar">
+        <thead id="calendar-header" class="calendar-header"></thead>
+        <tbody id="calendar-body" class="calendar-body"></tbody>
+      </table>
+    </div>
+    <script>
+      // 요소 선택
+      const todayDiv = document.getElementById("today");
+      const yearDiv = document.getElementById("year");
+      const hourMinuteSpan = document.getElementById("hourMinute");
+      const secondSpan = document.getElementById("second");
+      const calendarHeader = document.getElementById("calendar-header");
+      const calendarBody = document.getElementById("calendar-body");
+      const dayOfWeek = ["일", "월", "화", "수", "목", "금", "토"];
+
+      // getTime 함수
+      function getTime() {
+        // 내장 생성자 Date를 통해 시간을 불러옴
+        let now = new Date();
+        let year = now.getFullYear();
+        let month = now.getMonth() + 1;
+        let date = now.getDate();
+        let hour = now.getHours();
+        let minute = now.getMinutes();
+        let second = now.getSeconds();
+        let day = now.getDay();
+
+        month = month < 10 ? `0${month}` : month;
+        date = date < 10 ? `0${date}` : date;
+        hour = hour < 10 ? `0${hour}` : hour;
+        minute = minute < 10 ? `0${minute}` : minute;
+        second = second < 10 ? `0${second}` : second;
+
+        todayDiv.textContent = `${year}.${month}.${date} (${dayOfWeek[day]})`;
+        hourMinuteSpan.textContent = `${hour}:${minute}`;
+        secondSpan.textContent = `${second}`;
+      }
+
+      function getCalender() {
+        const now = new Date();
+        const firstDate = new Date(now.getFullYear(), now.getMonth(), 1);
+        const lastDate = new Date(now.getFullYear(), now.getMonth(), 0);
+
+        const dayRow = document.createElement("tr");
+
+        dayOfWeek.forEach((day) => {
+          const theader = document.createElement("th");
+          theader.textContent = day;
+          dayRow.append(theader);
+        });
+        calendarHeader.appendChild(dayRow);
+
+        let dateRow = document.createElement("tr");
+
+        for (let i = 0; i < firstDate.getDay(); i++) {
+          dateRow.appendChild(document.createElement("td"));
+        }
+
+        for (let i = 0; i < lastDate.getDate(); i++) {
+          if (dateRow.children.length === 7) {
+            calendarBody.appendChild(dateRow);
+            dateRow = document.createElement("tr");
+          }
+          const date = document.createElement("td");
+          date.textContent = i + 1;
+          if (now.getDate() === i + 1) {
+            date.classList.add("now");
+          }
+          dateRow.appendChild(date);
+        }
+        calendarBody.appendChild(dateRow);
+      }
+
+      getTime();
+      getCalender();
+      setInterval(getTime, 1000);
+    </script>
+  </body>
+</html>
