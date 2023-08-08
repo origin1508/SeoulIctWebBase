@@ -134,6 +134,10 @@
         todayDiv.textContent = `${year}.${month}.${date} (${dayOfWeek[day]})`;
         hourMinuteSpan.textContent = `${hour}:${minute}`;
         secondSpan.textContent = `${second}`;
+
+        if (hour === 0) {
+          getCalendar();
+        }
       }
 
       function getCalendar() {
