@@ -136,7 +136,7 @@
         secondSpan.textContent = `${second}`;
       }
 
-      function getCalender() {
+      function getCalendar() {
         const now = new Date();
         const firstDate = new Date(now.getFullYear(), now.getMonth(), 1);
         const lastDate = new Date(now.getFullYear(), now.getMonth(), 0);
@@ -157,22 +157,23 @@
         }
 
         for (let i = 0; i < lastDate.getDate(); i++) {
-          if (dateRow.children.length === 7) {
-            calendarBody.appendChild(dateRow);
-            dateRow = document.createElement("tr");
-          }
           const date = document.createElement("td");
           date.textContent = i + 1;
+
           if (now.getDate() === i + 1) {
             date.classList.add("now");
           }
           dateRow.appendChild(date);
+
+          if (dateRow.children.length === 7 || i === lastDate.getDate() - 1) {
+            calendarBody.appendChild(dateRow);
+            dateRow = document.createElement("tr");
+          }
         }
-        calendarBody.appendChild(dateRow);
       }
 
       getTime();
-      getCalender();
+      getCalendar();
       setInterval(getTime, 1000);
     </script>
   </body>
