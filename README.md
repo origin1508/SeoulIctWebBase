@@ -2,6 +2,12 @@
 
 2023-07-21 ~
 
+|주차|상세내용|
+|---|---|
+|1주차|HTML, CSS기초|
+|2주차|javascript, python 기초|
+|3주차|Database - mysql|
+|4주차|프론트엔드 기초 - React|
 ## 1주차
 
 - [0719 - 내가 만들고 싶은 웹사이트의 메인페이지 레이아웃을 잡아보기](https://github.com/origin1508/nipa-ict-web/tree/main/1%EC%A3%BC%EC%B0%A8/0719)
