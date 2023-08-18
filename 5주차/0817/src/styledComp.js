@@ -119,7 +119,13 @@ export const DetailContainer = styled.div`
   position: relative;
 `;
 
-export const DetailHeader = styled.div``;
+export const DetailHeader = styled.div`
+  margin-bottom: 16px;
+`;
+
+export const DetailSection = styled.section`
+  margin-bottom: 16px;
+`;
 
 export const MovieTitle = styled.h2`
   margin: 0;
@@ -140,10 +146,11 @@ export const MovieStar = styled.span`
 `;
 
 export const BackButton = styled.button`
+  padding: 8px;
   border: none;
-  color: white;
+  border-radius: 24px;
   font-size: 16px;
-  background-color: transparent;
+  background-color: white;
   position: absolute;
   top: 16px;
   right: 16px;

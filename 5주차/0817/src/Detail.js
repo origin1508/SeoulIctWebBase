@@ -3,6 +3,7 @@ import {
   DetailWrapper,
   DetailContainer,
   DetailHeader,
+  DetailSection,
   MovieTitle,
   MovieSub,
   MovieStar,
@@ -25,27 +26,27 @@ const Detail = ({ content }) => {
             {content.detail.genre.join(", ")}
           </MovieSub>
         </DetailHeader>
-        <div>
+        <DetailSection>
           <h3>주연</h3>
           <div>
             {content.detail.starring.map((item, idx) => (
               <MovieStar key={idx}>{item}</MovieStar>
             ))}
           </div>
-        </div>
-        <div>
+        </DetailSection>
+        <DetailSection>
           <h3>줄거리</h3>
           <p style={{ whiteSpace: "pre-wrap" }}>{content.detail.summary}</p>
-        </div>
-        <div>
+        </DetailSection>
+        <DetailSection>
           <h3>예고편</h3>
           <IframeContainer>
             <IframeBox
               dangerouslySetInnerHTML={{ __html: content.detail.videoUrl }}
             ></IframeBox>
           </IframeContainer>
-        </div>
-        <BackButton onClick={() => navigate(-1)}>{"<<"}BACK</BackButton>
+        </DetailSection>
+        <BackButton onClick={() => navigate(-1)}>{"<"}BACK</BackButton>
       </DetailContainer>
     </DetailWrapper>
   );
