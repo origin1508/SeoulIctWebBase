@@ -9,6 +9,17 @@ to {
 }
 `;
 
+const fadeInUp = keyframes`
+from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
+`;
+
 export const Menu = styled.div`
   position: sticky;
   top: 0;
@@ -64,6 +75,8 @@ export const Item = styled.div`
       display: flex;
     }
   }
+
+  animation: ${fadeInUp} 1s;
 
   @media all and (max-width: 800px) {
     width: 46%;
