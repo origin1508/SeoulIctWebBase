@@ -48,7 +48,7 @@ for i in range(10):
 plt.show()
 ```
 
-![plt](C:\Users\biglight\Desktop\Projects\nipa-ict-web\7주차\0901\plt.png)
+![plt](./plt.png)
 
 ### 패션 MNIST 데이터 전처리
 
