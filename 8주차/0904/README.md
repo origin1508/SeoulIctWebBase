@@ -41,4 +41,4 @@ def create_discriminator():
 
 바꾼 모델을 학습을 실시하였다. epochs가 10000번이라 41분이나 소요되었다. 그 결과 다음과 같은 이미지를 얻게 되었다.
 
-![결과](C:\Users\biglight\Desktop\Projects\nipa-ict-web\8주차\0904\결과.png)
+![결과](./결과.png)
